@@ -33,7 +33,7 @@ const AddressForm = ({ userEmail, onAddressSubmit, onCancel }) => {
       const email = decodedToken.email;
 
       const response = await axios.post(
-        "http://localhost:8000/update-address",
+        "https://shoyabmateen-booksworm-den-backend.onrender.com/update-address",
         {
           email: email,
           address: formData,
