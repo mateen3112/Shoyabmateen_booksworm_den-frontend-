@@ -17,7 +17,7 @@ const CustomerDashboard = () => {
     const fetchCustomers = async () => {
       try {
         const token = sessionStorage.getItem("token");
-        const response = await axios.get("http://localhost:8000/customers", {
+        const response = await axios.get("https://shoyabmateen-booksworm-den-backend.onrender.com/customers", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -59,7 +59,7 @@ const CustomerDashboard = () => {
     try {
       const token = sessionStorage.getItem("token");
       await axios.put(
-        `http://localhost:8000/customers/${editingCustomerId}`,
+        `https://shoyabmateen-booksworm-den-backend.onrender.com/customers/${editingCustomerId}`,
         editedCustomer,
         {
           headers: {
@@ -88,7 +88,7 @@ const CustomerDashboard = () => {
   const handleDelete = async (id) => {
     try {
       const token = sessionStorage.getItem("token");
-      await axios.delete(`http://localhost:8000/customers/${id}`, {
+      await axios.delete(`https://shoyabmateen-booksworm-den-backend.onrender.com/customers/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
