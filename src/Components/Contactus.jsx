@@ -22,7 +22,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/submit-form', formData);
+      const response = await axios.post('https://shoyabmateen-booksworm-den-backend.onrender.com/submit-form', formData);
       setMessage(response.data.message);
       setFormData({ name: '', email: '', description: '' });
     } catch (error) {
