@@ -15,7 +15,7 @@ const BookDashboard = () => {
   const fetchBooks = () => {
     setTimeout(() => {
       axios
-        .get("http://localhost:8000/books", {
+        .get("https://shoyabmateen-booksworm-den-backend.onrender.com/books", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -35,7 +35,7 @@ const BookDashboard = () => {
   const handleDelete = (bookId) => {
     if (window.confirm("Are you sure you want to delete this book?")) {
       axios
-        .delete(`http://localhost:8000/books/${bookId}`, {
+        .delete(`https://shoyabmateen-booksworm-den-backend.onrender.com/books/${bookId}`, {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
           },
@@ -66,7 +66,7 @@ const BookDashboard = () => {
 
   const handleSaveEdit = (updatedBook) => {
     axios
-      .put(`http://localhost:8000/books/${updatedBook._id}`, updatedBook, {
+      .put(`https://shoyabmateen-booksworm-den-backend.onrender.com/books/${updatedBook._id}`, updatedBook, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },
