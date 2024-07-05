@@ -13,7 +13,7 @@ const MyOrders = () => {
   const fetchOrders = async () => {
     try {
       const token = sessionStorage.getItem('token');
-      const response = await axios.get('http://localhost:8000/my-orders', {
+      const response = await axios.get('https://shoyabmateen-booksworm-den-backend.onrender.com/my-orders', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -27,7 +27,7 @@ const MyOrders = () => {
 
   const fetchBooksFromDatabase = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/books');
+      const response = await axios.get('https://shoyabmateen-booksworm-den-backend.onrender.com/books');
       const publishers = response.data;
 
       const books = publishers.reduce((acc, publisher) => {
