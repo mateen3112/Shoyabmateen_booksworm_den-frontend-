@@ -31,7 +31,7 @@ const Navbar = () => {
     const token = sessionStorage.getItem("token");
     if (token) {
       try {
-        const response = await axios.get('http://localhost:8000/wishlist', {
+        const response = await axios.get('https://shoyabmateen-booksworm-den-backend.onrender.com/wishlist', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -61,7 +61,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const token = sessionStorage.getItem('token');
-      await axios.post('http://localhost:8000/logout', {}, {
+      await axios.post('https://shoyabmateen-booksworm-den-backend.onrender.com/logout', {}, {
         headers: {
           Authorization: `Bearer ${token}`
         }
