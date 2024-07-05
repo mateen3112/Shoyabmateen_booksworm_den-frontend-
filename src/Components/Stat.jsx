@@ -40,17 +40,17 @@ const Statistics = () => {
         const token = sessionStorage.getItem("token");
         const [customersResponse, booksResponse, buyingResponse] =
           await Promise.all([
-            axios.get("http://localhost:8000/customers", {
+            axios.get("https://shoyabmateen-booksworm-den-backend.onrender.com/customers", {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
             }),
-            axios.get("http://localhost:8000/books", {
+            axios.get("https://shoyabmateen-booksworm-den-backend.onrender.com/books", {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
             }),
-            axios.get("http://localhost:8000/buyingmodules", {
+            axios.get("https://shoyabmateen-booksworm-den-backend.onrender.com/buyingmodules", {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
