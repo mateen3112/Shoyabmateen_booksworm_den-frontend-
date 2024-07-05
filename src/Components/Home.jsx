@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/books');
+        const response = await axios.get('https://shoyabmateen-booksworm-den-backend.onrender.com/books');
         const publishers = response.data;
 
         console.log("Fetched publishers data:", publishers); // Log the data to see its structure
@@ -66,7 +66,7 @@ const App = () => {
       if (!token) return;
 
       try {
-        const response = await axios.get('http://localhost:8000/user/token', {
+        const response = await axios.get('https://shoyabmateen-booksworm-den-backend.onrender.com/user/token', {
           headers: { Authorization: `Bearer ${token}` }
         });
         const { userId } = response.data;
