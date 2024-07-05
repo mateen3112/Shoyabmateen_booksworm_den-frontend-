@@ -34,7 +34,7 @@ const BookCard = ({ book, token, isExpanded, onExpand, onRemove }) => {
       if (!token) return;
 
       try {
-        const response = await axios.get("http://localhost:8000/wishlist", {
+        const response = await axios.get("https://shoyabmateen-booksworm-den-backend.onrender.com/wishlist", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -62,7 +62,7 @@ const BookCard = ({ book, token, isExpanded, onExpand, onRemove }) => {
     try {
       if (!isFavorite) {
         await axios.put(
-          "http://localhost:8000/wishlist",
+          "https://shoyabmateen-booksworm-den-backend.onrender.com/wishlist",
           { bookTitle: book.title },
           {
             headers: {
@@ -71,7 +71,7 @@ const BookCard = ({ book, token, isExpanded, onExpand, onRemove }) => {
           }
         );
       } else {
-        await axios.delete("http://localhost:8000/wishlist", {
+        await axios.delete("https://shoyabmateen-booksworm-den-backend.onrender.com/wishlist", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -99,7 +99,7 @@ const BookCard = ({ book, token, isExpanded, onExpand, onRemove }) => {
 
     try {
       const response = await axios.get(
-        `http://localhost:8000/user/address/${userEmail}`,
+        `https://shoyabmateen-booksworm-den-backend.onrender.com/user/address/${userEmail}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -135,7 +135,7 @@ const BookCard = ({ book, token, isExpanded, onExpand, onRemove }) => {
 
       // Assuming `book` is defined elsewhere in your component
       const response = await axios.post(
-        "http://localhost:8000/purchase",
+        "https://shoyabmateen-booksworm-den-backend.onrender.com/purchase",
         {
           bookTitle: book.title, // Ensure `book` is correctly accessed
           quantity: NumberofItems, // Example, adjust as needed
